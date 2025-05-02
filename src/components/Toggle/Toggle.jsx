@@ -12,13 +12,13 @@ const Toggle = () => {
     theme.dispatch({ type: "toggle" });
   };
   return (
-    <div className="toggle" onClick={handleClick}>
+    <div className='toggle' onClick={handleClick}>
       <Moon />
       <Sun />
       {/*                              toggle.css mein left ki property aik assign hy ussy delete
                                           krna hy pehly */}
       <div
-        className="t-button"
+        className='t-button'
         style={darkMode ? { left: "2px" } : { right: "2px" }}
       ></div>
     </div>

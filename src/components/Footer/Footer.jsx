@@ -1,23 +1,48 @@
 import React from "react";
 import "./Footer.css";
-import Wave from "../../img/wave.png";
 import Insta from "@iconscout/react-unicons/icons/uil-instagram";
 import Facebook from "@iconscout/react-unicons/icons/uil-facebook";
-import Gitub from "@iconscout/react-unicons/icons/uil-github";
+import Github from "@iconscout/react-unicons/icons/uil-github";
 
 const Footer = () => {
   return (
-    <div className='footer'>
-      <img src={Wave} alt='' style={{ width: "100%" }} />
+    <footer className='footer'>
       <div className='f-content'>
-        <span>subodhsigdel63@gmail.com</span>
+        <p>
+          Contact:{" "}
+          <a href='mailto:subodhsigdel63@gmail.com'>subodhsigdel63@gmail.com</a>
+        </p>
         <div className='f-icons'>
-          <Insta color='white' size={"3rem"} />
-          <Facebook color='white' size={"3rem"} />
-          <Gitub color='white' size={"3rem"} />
+          <a
+            href='https://www.instagram.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Instagram'
+          >
+            <Insta color='white' size='2rem' />
+          </a>
+          <a
+            href='https://www.facebook.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Facebook'
+          >
+            <Facebook color='white' size='2rem' />
+          </a>
+          <a
+            href='https://github.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='GitHub'
+          >
+            <Github color='white' size='2rem' />
+          </a>
         </div>
+        <p>
+          &copy; {new Date().getFullYear()} Subodh Sigdel. All rights reserved.
+        </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

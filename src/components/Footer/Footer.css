@@ -1,28 +1,91 @@
 .footer {
   display: flex;
-  align-items: center;
-  margin: -0.5rem -3.5rem;
-  position: relative;
-  margin-top: -7rem;
-}
-.f-content {
-  position: absolute;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 4rem;
-  gap: 4rem;
-  color: white;
-}
-.f-icons {
-  display: flex;
-  gap: 2rem;
+  align-items: center;
+  background-color: #4a4a4a; /* Professional gray background */
+  padding: 0.5rem 0.5rem; /* Further reduced padding for lower height */
+  position: relative;
+  margin: 0;
+  width: 100%; /* Full width */
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-@media screen and (max-width: 480px){
-  .f-content{
-    transform: scale(.5);
+.f-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px; /* Constrain content width for larger screens */
+  gap: 0.5rem; /* Tighter gap for compact layout */
+  color: #e0e0e0; /* Light gray text for contrast */
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+.f-content p {
+  margin: 0;
+  font-size: 0.85rem; /* Smaller font size */
+  opacity: 0.85; /* Slightly reduced opacity */
+}
+
+.f-icons {
+  display: flex;
+  gap: 0.75rem; /* Reduced gap for compactness */
+}
+
+.f-icons a {
+  color: #e0e0e0; /* Light gray icons */
+  font-size: 1rem; /* Smaller icons */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+.f-icons a:hover {
+  color: #a0a0a0; /* Darker gray for hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 0.4rem 0.5rem; /* Minimal padding */
+  }
+
+  .f-content {
+    gap: 0.4rem;
+    transform: none;
+  }
+
+  .f-content p {
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .f-icons {
+    gap: 0.6rem;
+  }
+
+  .f-icons a {
+    font-size: 0.9rem; /* Smaller icons */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 0.3rem 0.25rem; /* Minimal padding for small screens */
+  }
+
+  .f-content {
+    gap: 0.3rem;
+  }
+
+  .f-content p {
+    font-size: 0.75rem;
+  }
+
+  .f-icons {
+    gap: 0.5rem;
+  }
+
+  .f-icons a {
+    font-size: 0.85rem;
   }
 }

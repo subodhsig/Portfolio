@@ -1,114 +1,253 @@
-.Intro {
+.intro-section {
   display: flex;
-  height: 77vh;
-  margin-top: 6rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: white; /* Consistent dark mode background */
+  min-height: 70vh;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* left side styling */
-.i-left {
-  display: flex;
-  position: relative;
-  flex: 1;
-  flex-direction: column;
-  gap: 2rem;
+.intro-section.light-mode {
+  background-color: #111010;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.i-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .i-name {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-}
-.i-name > :nth-child(1) {
-  color: var(--black);
-  font-weight: bold;
-  font-size: 3rem;
-}
-.i-name > :nth-child(2) {
-  color: var(--orange);
-  font-weight: bold;
-  font-size: 3rem;
-}
-.i-name > :nth-child(3) {
-  font-weight: 100;
-  font-size: 14px;
-  color: var(--gray);
-  margin-top: 10px;
-}
-.i-button {
-  width: 6rem;
-  height: 2rem;
-}
-.i-icons {
-  margin-top: 3rem;
-  display: flex;
-  gap: 0rem;
-}
-.i-icons > * {
-  transform: scale(0.5);
-}
-.i-icons > *:hover {
-  cursor: pointer;
-}
-/* right side styling */
-.i-right {
-  flex: 1;
-  position: relative;
-}
-.i-right > * {
-  position: absolute;
-  z-index: 1;
-}
-.i-right > :nth-child(1) {
-  transform: scale(0.69);
-  left: -15%;
-  top: -9%;
-}
-.i-right > :nth-child(2) {
-  top: -4.6rem;
-  transform: scale(0.67);
-  left: -3rem;
-}
-.i-right > :nth-child(3) {
-  transform: scale(1.4);
-  left: 28%;
-}
-.i-right > :nth-child(4) {
-  transform: scale(0.62);
-  top: -19%;
-  left: -24%;
-  border-radius: 50%;
-  padding: 0;
 }
 
-/* blur */
-.blur {
-  position: absolute;
-  width: 22rem;
-  height: 14rem;
+.i-name span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.i-name span:nth-child(2) {
+  color: #ff9500; /* Orange for name */
+}
+
+.i-name span:nth-child(1),
+.i-name span:nth-child(3) {
+  color: #e0e0e0; /* Light gray for text in dark mode */
+}
+
+.i-name.light-mode span:nth-child(1),
+.i-name.light-mode span:nth-child(3) {
+  color: #1a1a1a; /* Dark text in light mode */
+}
+
+.button {
+  padding: 0.6rem 1.8rem;
+  background-color: transparent;
+  color: #ff9500;
+  border: 2px solid #ff9500;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: #ff9500;
+  color: #ffffff;
+}
+
+.i-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.i-icons a img {
+  width: 2rem;
+  height: 2rem;
+  filter: grayscale(0%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.i-icons a img:hover {
+  transform: scale(1.1);
+  filter: grayscale(100%);
+}
+
+.i-right {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.i-image {
+  position: relative;
+}
+
+.main-img {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: #edd0ff;
-  filter: blur(212px);
-  z-index: -9;
-  top: -18%;
-  left: 56%;
-  filter: blur(72px);
+  border: 4px solid #4a4a4a;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.main-img.light-mode {
+  border-color: #d3d3d3; /* Lighter border in light mode */
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+
+.skills-section h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: blue; /* Light gray for dark mode */
+  margin: 0;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.skills-section.light-mode h3 {
+  color: aqua; /* Dark text in light mode */
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skill label {
+  font-size: 0.95rem;
+  color: #d3d3d3; /* Light gray for labels in dark mode */
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.skill.light-mode label {
+  color: black; /* Dark gray in light mode */
+}
+
+.skill-bar {
+  width: 100%;
+  background-color: gray; /* Dark gray background for skill bar in dark mode */
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.skill-bar.light-mode {
+  background-color: #d3d3d3; /* Light gray in light mode */
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: blue; /* Dark progress in dark mode */
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-progress.light-mode {
+  background-color: #1a1a1a; /* Darker progress in light mode */
+}
+
+@media screen and (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .i-left,
+  .i-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .i-name span {
+    font-size: 2rem;
+  }
+
+  .main-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .skills-section {
+    margin-top: 1.5rem;
+  }
+
+  .skills-section h3 {
+    font-size: 1.4rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  .Intro {
-    flex-direction: column;
-    gap: 7rem;
-    height: 64rem;
+  .intro-section {
+    padding: 1rem;
   }
 
-  .i-right {
-    transform: scale(0.8);
-    left: -3rem;
+  .i-name span {
+    font-size: 1.8rem;
   }
-  .i-right .blur {
-    display: none;
+
+  .button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
   }
-  .floating-div:nth-of-type(1){
-    /* display: none; */
-    top: -7rem !important;;
+
+  .i-icons {
+    gap: 1.2rem;
   }
+
+  .i-icons a img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .main-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skills-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .skill label {
+    font-size: 0.85rem;
+  }
+
+  .skill-bar {
+    height: 8px;
+  }
+}
+
+.light-mode {
+  color: #eee2e2;
 }
